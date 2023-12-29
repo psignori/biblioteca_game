@@ -6,7 +6,7 @@ services:
       context: .
     container_name: biblioteca-game
     volumes:
-      - ./projeto:/var/www/
+      - .:/var/www/
     ports:
       - "8010:80"
     tty: true

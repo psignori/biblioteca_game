@@ -19,20 +19,12 @@ Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua
     * git clone https://github.com/psignori/biblioteca_game.git
 
 * Saia do container e entre dentro da pasta que foi mapeada para dar as próximas permissões
-  * Adicionar grupo de usuarios
-    * sudo addgroup projeto
+  * permissão para poder salvar arquivos dentro do /biblioteca_game
+      * sudo chmod 777 -Rf .
 
-  * acessar os grupos para adicionar o usuario nele
-    * sudo vim /etc/group
-    * deve ficar algo parecido como "projeto:x:1002:patrick"
+## Problemas comum
 
-  * trocar o user pelo seu usuario local
-      * sudo chmod 775 -Rf .
-      * sudo chown www-data:user -Rf .
-
-# Problemas comum
-
-# Problemas que estavam ocorrendo antes mas que não estão mais ocorrendo, só para documentar
+## Problemas que estavam ocorrendo antes mas que não estão mais ocorrendo, só para documentar
   * Dar permissões ao git;
     * git config --global --add safe.directory /var/www/biblioteca_game
     * git config --global user.email "you@example.com"
