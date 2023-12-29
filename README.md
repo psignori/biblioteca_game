@@ -1,5 +1,5 @@
 # biblioteca_game:
-<img src="public/img/logo.jpeg" alt="logo">
+<img src="public/img/logo_certo.jpeg" alt="logo">
 
 # Instrução do deploy do docker;
 Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua preferencia, sugiro criar um separado para o projeto
