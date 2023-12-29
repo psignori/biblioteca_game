@@ -31,6 +31,6 @@ Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua
 
 
 # Problemas comum
-  # Caso de erro em salvar os arquivos executar o seguinte comando dentro da pasta do projeto na maquina local fora do docker, trocar o user pelo seu usuario local
-  sudo chmod 775 -Rf .
-  sudo chown www-data:user -Rf .
+  * Caso de erro em salvar os arquivos executar o seguinte comando dentro da pasta do projeto na     maquina local fora do docker, trocar o user pelo seu usuario local
+    sudo chmod 775 -Rf .
+    sudo chown www-data:user -Rf .
