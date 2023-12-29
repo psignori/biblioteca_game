@@ -18,19 +18,28 @@ Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua
     * cd /var/www
     * git clone https://github.com/psignori/biblioteca_game.git
 
-* Dar permissões ao git;
-  * git config --global --add safe.directory /var/www/biblioteca_game
-  * git config --global user.email "you@example.com"
-  * git config --global user.name "Your Name"
+* Saia do container e entre dentro da pasta que foi mapeada para dar as próximas permissões
+  * Adicionar grupo de usuarios
+    * sudo addgroup projeto
 
-* Criar chave pública na seguinte url: https://github.com/settings/tokens
-  * ela vai gerar uma chave parecida com essa aq: TESTECqYY1ZI416nTESTE2OoptqjZ9cuK1TESTE sem os testes claro.
+  * acessar os grupos para adicionar o usuario nele
+    * sudo vim /etc/group
+    * deve ficar algo parecido como "projeto:x:1002:patrick"
 
-* dentro do repositorio que foi clonado executar o seguinte comando trocando somente a chave na url:
-  * git remote set-url origin https://sua_chave_aq@github.com/psignori/biblioteca_game.git
-
+  * trocar o user pelo seu usuario local
+      * sudo chmod 775 -Rf .
+      * sudo chown www-data:user -Rf .
 
 # Problemas comum
-  * Caso de erro em salvar os arquivos executar o seguinte comando dentro da pasta do projeto na     maquina local fora do docker, trocar o user pelo seu usuario local
-    * sudo chmod 775 -Rf .
-    * sudo chown www-data:user -Rf .
+
+# Problemas que estavam ocorrendo antes mas que não estão mais ocorrendo, só para documentar
+  * Dar permissões ao git;
+    * git config --global --add safe.directory /var/www/biblioteca_game
+    * git config --global user.email "you@example.com"
+    * git config --global user.name "Your Name"
+
+  * Criar chave pública na seguinte url: https://github.com/settings/tokens
+    * ela vai gerar uma chave parecida com essa aq: TESTECqYY1ZI416nTESTE2OoptqjZ9cuK1TESTE sem os testes claro.
+
+  * dentro do repositorio que foi clonado executar o seguinte comando trocando somente a chave na url:
+    * git remote set-url origin https://sua_chave_aq@github.com/psignori/biblioteca_game.git
