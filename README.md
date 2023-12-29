@@ -22,4 +22,9 @@ Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua
   git config --global --add safe.directory /var/www/biblioteca_game
   git config --global user.email "you@example.com"
   git config --global user.name "Your Name"
-  
+
+* Criar chave pública na seguinte url: https://github.com/settings/tokens
+  ela vai gerar uma chave parecida com essa aq: TESTECqYY1ZI416nTESTE2OoptqjZ9cuK1TESTE sem os testes claro.
+
+  dentro do repositorio que foi clonado executar o seguinte comando trocando somente a chave na url:
+  git remote set-url origin https://sua_chave_aq@github.com/psignori/biblioteca_game.git
