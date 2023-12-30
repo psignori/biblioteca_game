@@ -29,8 +29,11 @@ Copia os Arquivo Dockerfile, docker-compose.yml e biblioteca_game.conf para dent
 * Acesse o diretorio clonado e execute o composer install
   * cd biblioteca_game
   * composer install
+  * php artisan migrate
 
 ## Problemas comum
+  * descomentar os arquivos pgsql no php.ini
+    * vim /etc/php/8.2/apache2/php.ini
 
 ## Problemas que estavam ocorrendo antes mas que não estão mais ocorrendo, só para documentar
   * Dar permissões ao git;
