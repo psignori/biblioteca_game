@@ -2,7 +2,7 @@
 <img src="public/img/logo_certo.jpeg" alt="logo" style="max-width: 250px !important;">
 
 # Instrução do deploy do docker;
-Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua preferencia, sugiro criar um separado para o projeto
+Copia os Arquivo Dockerfile, docker-compose.yml e biblioteca_game.conf para dentro do diretorio de sua preferencia, sugiro criar um separado para o projeto
 
 * dentro do diretorio e já com os dois arquivos nele (Dockerfile e docker-compose) executar os seguintes comandos;
     * docker-compose down
@@ -17,6 +17,10 @@ Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua
 * Dentro do container acessa o diretorio /var/www e dar o git clone;
     * cd /var/www
     * git clone https://github.com/psignori/biblioteca_game.git
+
+* Acesse o diretorio clonado e execute o composer install
+  * cd biblioteca_game
+  * composer install
 
 * Saia do container e entre dentro da pasta que foi mapeada para dar as próximas permissões
   * permissão para poder salvar arquivos dentro do /biblioteca_game
@@ -35,3 +39,7 @@ Copia os Arquivo Dockerfile e docker-compose.yml para dentro do diretorio de sua
 
   * dentro do repositorio que foi clonado executar o seguinte comando trocando somente a chave na url:
     * git remote set-url origin https://sua_chave_aq@github.com/psignori/biblioteca_game.git
+
+## Coisas que faltam ainda
+  * conseguir servir a aplicação na porta 80
+  * testar base de dados
