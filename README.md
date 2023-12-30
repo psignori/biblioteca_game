@@ -19,7 +19,6 @@ Copia os Arquivo Dockerfile, docker-compose.yml e biblioteca_game.conf para dent
   * psql --command "ALTER USER postgres WITH PASSWORD 'postgres';"
   * psql --command "CREATE DATABASE biblioteca_game;"
   * exit
-  * exit
 
 * Dentro do container acessa o diretorio /var/www e dar o git clone;
     * cd /var/www
@@ -49,4 +48,4 @@ Copia os Arquivo Dockerfile, docker-compose.yml e biblioteca_game.conf para dent
 
 ## Coisas que faltam ainda
   * conseguir servir a aplicação na porta 80
-  * testar base de dados
+  * testar base de dados, base conectou certinho mas não consigo por exemplo da um php artisan migrate:status de fora do container, de dentro funciona
