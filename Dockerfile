@@ -39,6 +39,7 @@ RUN echo -e "Instalação de dependências..." && \
     unzip \
     zip \
     vim \
+    cron \
     htop
 
 # Muda o time zone da imagem
@@ -52,20 +53,13 @@ RUN echo $TZ > /etc/timezone && \
 
 # instalação do banco
 RUN apt-get update && \
-    apt-get install postgresql -y \
+    apt-get install postgresql-14 -y \
     postgresql-contrib
 
-
-# caso de erro su - postgres
-# psql -U seu_usuario -d seu_banco_de_dados
-# Configuração do PostgreSQL
-USER postgres
-RUN /etc/init.d/postgresql start && \
-    psql --command "ALTER USER postgres WITH PASSWORD 'postgres';" && \
-    psql --command "CREATE DATABASE biblioteca_game;"
-
-# Configuração do Apache
-RUN a2enmod rewrite
+# Módulos Apache
+RUN a2enmod rewrite && \
+    a2enmod headers && \
+    a2enmod ssl
 
 # Copia o virtualhost para o apache
 COPY ./biblioteca_game.conf /etc/apache2/sites-available/biblioteca_game.conf
@@ -73,7 +67,5 @@ RUN a2ensite biblioteca_game.conf
 RUN a2dissite 000-default.conf
 RUN /etc/init.d/apache2 restart
 
-RUN chmod 777 /var/www/biblioteca_game/ -Rf
-
 # Inicializa o Apache quando o container for iniciado
-CMD service apache2 start && bash
+CMD service postgresql start && service apache2 start && bash

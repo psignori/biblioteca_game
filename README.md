@@ -14,17 +14,21 @@ Copia os Arquivo Dockerfile, docker-compose.yml e biblioteca_game.conf para dent
 * Acessa o container com o seguinte comando;
   * docker exec -it biblioteca-game /bin/bash
 
+* Executa a criação da base de dados com os seguintes comandos
+  * su - postgres
+  * psql --command "ALTER USER postgres WITH PASSWORD 'postgres';"
+  * psql --command "CREATE DATABASE biblioteca_game;"
+  * exit
+  * exit
+
 * Dentro do container acessa o diretorio /var/www e dar o git clone;
     * cd /var/www
     * git clone https://github.com/psignori/biblioteca_game.git
+    * chmod 777 /var/www/biblioteca_game/ -Rf
 
 * Acesse o diretorio clonado e execute o composer install
   * cd biblioteca_game
   * composer install
-
-* Saia do container e entre dentro da pasta que foi mapeada para dar as próximas permissões
-  * permissão para poder salvar arquivos dentro do /biblioteca_game
-      * sudo chmod 777 -Rf .
 
 ## Problemas comum
 
