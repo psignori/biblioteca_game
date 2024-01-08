@@ -11,3 +11,7 @@ services:
       - "8010:80"
     tty: true
       #command: /bin/bash -c "apt-get update && apt-get install -y apache2 && apache2"
+
+networks: 
+  net01:
+    driver: bridge
