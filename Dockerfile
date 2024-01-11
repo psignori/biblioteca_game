@@ -10,6 +10,7 @@ ARG DEBIAN_FRONTEND="noninteractive"
 # Atualize os repositórios e instale as dependências
 RUN apt-get update && apt-get install -y \
     software-properties-common \
+    && apt-get update \
     && add-apt-repository ppa:ondrej/php \
     && apt-get update
 
